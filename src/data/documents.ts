@@ -1,0 +1,167 @@
+import { DocumentChunk, IngestedDocument } from "@/types/document";
+
+export const INGESTED_DOCUMENTS: IngestedDocument[] = [
+  {
+    id: "doc-aapl-10k-2025",
+    title: "Apple Inc. Form 10-K Annual Report (FY2025)",
+    fileName: "AAPL_10K_FY2025_Audited.pdf",
+    fileSize: 4892014,
+    fileType: "pdf",
+    documentType: "annual_report_10k",
+    companyTicker: "AAPL",
+    reportingPeriod: "FY2025",
+    publicationDate: "2025-11-04",
+    status: "indexed",
+    chunkCount: 142,
+    verifiedSource: true,
+    uploadedAt: "2026-01-10T10:00:00Z",
+    summary:
+      "Comprehensive annual report filed with the SEC covering consolidated revenue of $412.5B, gross margins of 47.0%, supply chain risk factors, and international currency exposure.",
+  },
+  {
+    id: "doc-nvda-10k-2025",
+    title: "NVIDIA Corporation Form 10-K (FY2025)",
+    fileName: "NVDA_10K_FY2025_SEC_Filing.pdf",
+    fileSize: 5218930,
+    fileType: "pdf",
+    documentType: "annual_report_10k",
+    companyTicker: "NVDA",
+    reportingPeriod: "FY2025",
+    publicationDate: "2025-02-28",
+    status: "indexed",
+    chunkCount: 168,
+    verifiedSource: true,
+    uploadedAt: "2026-01-12T14:30:00Z",
+    summary:
+      "Audited annual disclosure detailing compute and networking revenue acceleration to $128.5B, operating margins of 62.4%, and sovereign AI demand trends.",
+  },
+  {
+    id: "doc-tsla-10k-2024",
+    title: "Tesla, Inc. Form 10-K Annual Report (FY2024)",
+    fileName: "TSLA_10K_FY2024_Audited.pdf",
+    fileSize: 3948120,
+    fileType: "pdf",
+    documentType: "annual_report_10k",
+    companyTicker: "TSLA",
+    reportingPeriod: "FY2024",
+    publicationDate: "2025-01-29",
+    status: "indexed",
+    chunkCount: 118,
+    verifiedSource: true,
+    uploadedAt: "2026-01-15T09:15:00Z",
+    summary:
+      "Annual filing detailing automotive delivery volumes, Megapack energy storage expansion, operating margins of 8.2%, and raw material supply chain dynamics.",
+  },
+  {
+    id: "doc-bis-trade-memo-2026",
+    title: "US Bureau of Industry and Security Trade Policy Memo",
+    fileName: "BIS_Trade_Policy_Guidance_2026.pdf",
+    fileSize: 1420950,
+    fileType: "pdf",
+    documentType: "geopolitical_memo",
+    companyTicker: "NVDA",
+    reportingPeriod: "Q1 2026",
+    publicationDate: "2026-03-24",
+    status: "indexed",
+    chunkCount: 45,
+    verifiedSource: true,
+    uploadedAt: "2026-03-25T08:00:00Z",
+    summary:
+      "Federal register regulatory dossier detailing export control adjustments on high-bandwidth memory (HBM) and threshold compute clustering.",
+  },
+  {
+    id: "doc-aapl-financials-csv",
+    title: "Historical Financial Performance Model (2020-2025)",
+    fileName: "Financial_Metrics_Normalization_Table.csv",
+    fileSize: 84300,
+    fileType: "csv",
+    documentType: "financial_statement_csv",
+    companyTicker: "AAPL",
+    reportingPeriod: "2020-2025",
+    publicationDate: "2026-01-05",
+    status: "indexed",
+    chunkCount: 24,
+    verifiedSource: true,
+    uploadedAt: "2026-01-05T12:00:00Z",
+    summary:
+      "Tabular multi-year normalized metric data containing income statements, balance sheets, cash flow series, and derived valuation ratios.",
+  },
+];
+
+export const DOCUMENT_CHUNKS: DocumentChunk[] = [
+  {
+    id: "chk-aapl-01",
+    documentId: "doc-aapl-10k-2025",
+    chunkIndex: 12,
+    content:
+      "The Company's products and services rely on complex global supply chains with high concentrations of assembly facilities in East Asia. Substantially all manufacturing and assembly is performed by outsourced manufacturing partners. Management continues to invest in geographic diversification across India and Southeast Asia to mitigate potential geopolitical trade disruptions.",
+    tokenCount: 68,
+    metadata: {
+      pageNumber: 14,
+      sectionHeading: "Item 1A. Risk Factors — Supply Chain Resilience",
+      reportingPeriod: "FY2025",
+      companyTicker: "AAPL",
+    },
+    similarityScore: 0.94,
+  },
+  {
+    id: "chk-aapl-02",
+    documentId: "doc-aapl-10k-2025",
+    chunkIndex: 44,
+    content:
+      "Total net sales were $412.5 billion in fiscal 2025, compared to $391.0 billion in fiscal 2024. Services revenue reached an all-time high of $96.2 billion with a gross margin of 74.2%, while Products gross margin stood at 38.6%. Consolidated gross profit totaled $193.9 billion, representing a 47.0% gross margin.",
+    tokenCount: 76,
+    metadata: {
+      pageNumber: 36,
+      sectionHeading: "Item 7. Management's Discussion and Analysis — Consolidated Results",
+      reportingPeriod: "FY2025",
+      companyTicker: "AAPL",
+    },
+    similarityScore: 0.96,
+  },
+  {
+    id: "chk-nvda-01",
+    documentId: "doc-nvda-10k-2025",
+    chunkIndex: 28,
+    content:
+      "Compute & Networking segment revenue increased 142% to $110.4 billion in fiscal 2025, driven by unprecedented enterprise and cloud service provider demand for the NVIDIA Blackwell and Hopper AI computing architectures. Data Center gross margins benefited from manufacturing scale and proprietary NVLink software stack integrations.",
+    tokenCount: 64,
+    metadata: {
+      pageNumber: 32,
+      sectionHeading: "Item 7. MD&A — Segment Performance",
+      reportingPeriod: "FY2025",
+      companyTicker: "NVDA",
+    },
+    similarityScore: 0.93,
+  },
+  {
+    id: "chk-nvda-02",
+    documentId: "doc-bis-trade-memo-2026",
+    chunkIndex: 4,
+    content:
+      "Revised export classification controls stipulate that semiconductor packages incorporating more than 36 gigabytes of HBM3e or HBM4 memory, or exceeding interconnect bandwidth of 600 gigabytes per second, require validated end-user licenses prior to shipment to destinations in Tier-3 country groups.",
+    tokenCount: 58,
+    metadata: {
+      pageNumber: 3,
+      sectionHeading: "Export Administration Regulations (EAR) Section 742.6",
+      reportingPeriod: "Q1 2026",
+      companyTicker: "NVDA",
+    },
+    similarityScore: 0.91,
+  },
+  {
+    id: "chk-tsla-01",
+    documentId: "doc-tsla-10k-2024",
+    chunkIndex: 19,
+    content:
+      "Energy Storage deployments reached 15.3 GWh in 2024, an increase of 125% compared to 2023. Energy generation and storage revenue grew to $6.04 billion, generating gross margin of 24.1%, while Automotive gross margin (ex-regulatory credits) compressed to 14.8% due to global competitive pricing adjustments.",
+    tokenCount: 69,
+    metadata: {
+      pageNumber: 28,
+      sectionHeading: "Item 7. MD&A — Energy Generation & Storage Operations",
+      reportingPeriod: "FY2024",
+      companyTicker: "TSLA",
+    },
+    similarityScore: 0.95,
+  },
+];
